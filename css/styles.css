@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: url(../img/background.jpg) repeat;
+  background-size: 780px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#calculator {
+  box-shadow: -21px 25px 16px rgba(0, 0, 0, 0.5), -9px 9px 10px rgba(0, 0, 0, 0.6);
+  width: 300px;
+  height: 450px;
+  background-color: #111;
+  background: url(../img/zwartevilt.png) repeat;
+  background-size: auto 150px;
+  border-radius: 10px;
+  border: 4px solid #222;
+  padding: 10px;
+  display: grid;
+  position: relative;
+  grid-template-rows: 1.4fr 5fr;
+  transform: scale(0.9) rotateZ(-10deg);
+}
+
+#calculator:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.2;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+100 */
+  background: -moz-linear-gradient(45deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#calculator .screen {
+  background-color: #e4e2c2;
+  margin: 5px 4px 15px;
+  border: 2px solid #666;
+  position: relative;
+  padding: 0.24em 0.46em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+#calculator .screen:before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: 0;
+  left: 0;
+  border-top: 2px solid #333;
+  border-right: 2px solid #333;
+}
+
+#calculator .screen input {
+  text-align: right;
+  text-shadow: -4px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  position: relative;
+  font-family: 'Revalia', cursive;
+  font-size: 2.25em;
+  line-height: 1.5em;
+  background: transparent;
+  border: none;
+}
+
+#calculator .screen input {
+  outline: none;
+}
+
+#calculator .numpad {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: relative;
+  background-color: #111;
+  padding: 3px 10px 13px;
+  border-bottom: 1px solid #333;
+  border-left: 1px solid #222;
+  overflow: hidden;
+}
+
+#calculator .numpad kbd {
+  color: #FFF;
+  user-select: none;
+  cursor: pointer;
+  font-family: sans-serif;
+  text-shadow: 0px 0px 2px #FFF;
+  background-color: #1C1C1C;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  /*background: url(img/zwartevilt.png) repeat;*/
+  background-size: auto 150px;
+  transition: transform 50ms ease;
+}
+
+#calculator .numpad kbd:active {
+  transform: scale(0.95) translateY(10px);
+}
+
+#calculator .numpad kbd:nth-child(n) {
+  -moz-box-shadow: inset 0 -0.5px 0 1px rgba(255, 255, 255, 0.1), -8px 0px 0px -1px #111, 6px 0px 0px -1px #222, 0px 14px 0px -1px #0F0F0F 1, -1px 6.5px 0px 5.5px #202020;
+  -webkit-box-shadow: inset 0 -0.5px 0 1px rgba(255, 255, 255, 0.1), -8px 0px 0px -1px #111, 6px 0px 0px -1px #222, 0px 14px 0px -1px #0F0F0F, -1px 6.5px 0px 5.5px #202020;
+  box-shadow: inset 0 -0.5px 0 1px rgba(255, 255, 255, 0.1), -8px 0px 0px -1px #111, 6px 0px 0px -1px #222, 0px 14px 0px -1px #0F0F0F, -1px 6.5px 0px 5.5px #202020;
+  z-index: 10;
+}
+
+#calculator .numpad kbd:nth-child(n+5) {
+  -moz-box-shadow: inset 0 -0.5px 0 1px rgba(255, 255, 255, 0.1), -8px 0px 0px -1px #111, 6px 0px 0px -1px #222, 0px 14px 0px -1px #0F0F0F 1, -1px 6.5px 0px 5.5px #202020;
+  -webkit-box-shadow: inset 0 -0.5px 0 1px rgba(255, 255, 255, 0.1), -8px 0px 0px -1px #111, 6px 0px 0px -1px #222, 0px 14px 0px -1px #0F0F0F, -1px 6.5px 0px 5.5px #202020;
+  box-shadow: inset 0 -0.5px 0 1px rgba(255, 255, 255, 0.1), -8px 0px 0px -1px #111, 6px 0px 0px -1px #222, 0px 14px 0px -1px #0F0F0F, -1px 6.5px 0px 5.5px #202020;
+  z-index: 20;
+}
+
+#calculator .numpad kbd:nth-child(n+8) {
+  -moz-box-shadow: inset 0 -0.5px 0 1px rgba(255, 255, 255, 0.1), -8px 0px 0px -1px #111, 6px 0px 0px -1px #222, 0px 14px 0px -1px #0F0F0F 1, -1px 6.5px 0px 5.5px #202020;
+  -webkit-box-shadow: inset 0 -0.5px 0 1px rgba(255, 255, 255, 0.1), -8px 0px 0px -1px #111, 6px 0px 0px -1px #222, 0px 14px 0px -1px #0F0F0F, -1px 6.5px 0px 5.5px #202020;
+  box-shadow: inset 0 -0.5px 0 1px rgba(255, 255, 255, 0.1), -8px 0px 0px -1px #111, 6px 0px 0px -1px #222, 0px 14px 0px -1px #0F0F0F, -1px 6.5px 0px 5.5px #202020;
+  z-index: 30;
+}
+
+#calculator .numpad kbd:nth-child(n+12) {
+  -moz-box-shadow: inset 0 -0.5px 0 1px rgba(255, 255, 255, 0.1), -8px 0px 0px -1px #111, 6px 0px 0px -1px #222, 0px 14px 0px -1px #0F0F0F 1, -1px 6.5px 0px 5.5px #202020;
+  -webkit-box-shadow: inset 0 -0.5px 0 1px rgba(255, 255, 255, 0.1), -8px 0px 0px -1px #111, 6px 0px 0px -1px #222, 0px 14px 0px -1px #0F0F0F, -1px 6.5px 0px 5.5px #202020;
+  box-shadow: inset 0 -0.5px 0 1px rgba(255, 255, 255, 0.1), -8px 0px 0px -1px #111, 6px 0px 0px -1px #222, 0px 14px 0px -1px #0F0F0F, -1px 6.5px 0px 5.5px #202020;
+  z-index: 40;
+}
+
+#calculator .numpad kbd:nth-child(n+15) {
+  -moz-box-shadow: inset 0 -0.5px 0 1px rgba(255, 255, 255, 0.1), -8px 0px 0px -1px #111, 6px 0px 0px -1px #222, 0px 14px 0px -1px #0F0F0F 1, -1px 6.5px 0px 5.5px #202020;
+  -webkit-box-shadow: inset 0 -0.5px 0 1px rgba(255, 255, 255, 0.1), -8px 0px 0px -1px #111, 6px 0px 0px -1px #222, 0px 14px 0px -1px #0F0F0F, -1px 6.5px 0px 5.5px #202020;
+  box-shadow: inset 0 -0.5px 0 1px rgba(255, 255, 255, 0.1), -8px 0px 0px -1px #111, 6px 0px 0px -1px #222, 0px 14px 0px -1px #0F0F0F, -1px 6.5px 0px 5.5px #202020;
+}
+
+#calculator .numpad kbd[data-key="+"] {
+  grid-column: 4;
+  grid-row: 2 / span 2;
+}
+
+#calculator .numpad kbd[data-key="="] {
+  grid-column: 4;
+  grid-row: 4 / span 2;
+}
+
+#calculator .numpad kbd[data-key="0"] {
+  grid-column: 1 / span 2;
+}
